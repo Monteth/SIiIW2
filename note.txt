@@ -1,0 +1,6 @@
+Co to jest backtracking, forward check
+Które zadanie z listy może być rozwiązane CSP
+Uzupełnienie zasad problemu futoshiki
+Zrobienie 2-3 kroków algorytmów
+przedstawienie problemu z mapy do grafu
+wskazanie tego, które rozwiązanie może być dobre, a które złe, dlaczego wybraliśmy takie, a nie inne rozwiązanie
