@@ -6,7 +6,7 @@ class Location(value: String) {
 
     init {
         x = charToDec(value[0])
-        y = value[1].toInt()
+        y = value[1].toString().toInt()
     }
 
     private fun charToDec(char: Char): Int {

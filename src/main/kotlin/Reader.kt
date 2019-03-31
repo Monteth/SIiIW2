@@ -1,4 +1,5 @@
 import models.FutoModel
+import models.Location
 import models.SkyModel
 import java.io.File
 
@@ -15,7 +16,7 @@ fun getFuto(filename: String): FutoModel {
     val relStartIndex = futoEndIndex + 1
     val relEndIndex = splittedLines.size
 
-    val futoRAW = arrayListOf<ArrayList<Int>>()
+    val futoRAW: MutableList<MutableList<Int>> = mutableListOf<MutableList<Int>>()
     val rels = arrayListOf<Pair<String, String>>()
 
     splittedLines.forEachIndexed { index, row ->
@@ -26,8 +27,16 @@ fun getFuto(filename: String): FutoModel {
                 rels.add(Pair(row[0], row[1]))
         }
     }
+    println(Location("D1").x)
+    println(Location("D1").y)
+    println(futoRAW.get(Location("D1")))
     return FutoModel(board = futoRAW, relations = rels)
 }
+
+private fun <E> List<List<E>>.get(location: Location): E {
+    return this[location.y -1][location.x -1]
+}
+
 
 fun getSky(filename: String): SkyModel {
     val lines = readLines(filename)
